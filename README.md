@@ -8,14 +8,14 @@
 git clone --depth=1 --branch=master https://github.com/megicalcompany/MegicalEasyAccess-SDK-Android
 ```
 
-2. Add module to project 
+2. Add module to project
 
 settings.gradle:
 
 ```
 include ':MegicalEasyAccess-SDK-Android'
 ```
- 
+
 app/build.gradle:
 
 ```
@@ -76,7 +76,7 @@ Use client token to register oauth client with auth-service.
 
 - `authEnvUrl` auth-service url.
 - `clientToken` returned from test-service. One use only. 5 minutes ttl
-- `deviceId` string. Example app uses random uuid. 
+- `deviceId` string. Example app uses random uuid.
 https://developer.android.com/training/articles/user-data-ids#kotlin
 - `keyId` name of keypair in keychain. Example app uses appId.
 
