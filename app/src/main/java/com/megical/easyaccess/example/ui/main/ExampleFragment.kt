@@ -10,8 +10,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidmads.library.qrgenearator.QRGContents
-import androidmads.library.qrgenearator.QRGEncoder
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.google.zxing.WriterException
@@ -206,8 +204,11 @@ class ExampleFragment : Fragment() {
 
     private fun trySetQR(data: String) {
         try {
-            val qrgEncoder = QRGEncoder(data, null, QRGContents.Type.TEXT, 200)
-            binding.qrCode.setImageBitmap(qrgEncoder.bitmap)
+            binding.qrCode.setImageBitmap(
+                QrCodeGenerator.generateQrCode(
+                    data,200, 200
+                )
+            )
         } catch (e: WriterException) {
             Timber.e(e)
         }

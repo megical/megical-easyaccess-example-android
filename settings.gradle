@@ -1,4 +1,4 @@
 include ':playground'
-include ':MegicalEasyAccess-SDK-Android'
+include ':megical-easyaccess-sdk-android'
 include ':app'
 rootProject.name = "Easy Access Example"
