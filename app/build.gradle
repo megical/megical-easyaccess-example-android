@@ -1,8 +1,16 @@
-plugins {
-    id 'com.android.application'
-    id 'kotlin-android'
-    id 'kotlin-kapt'
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:2.2.20-2.0.3"
+    }
 }
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'com.google.devtools.ksp'
 
 android {
     compileSdkVersion 34
@@ -55,7 +63,7 @@ dependencies {
 
     // Network
     implementation "com.squareup.moshi:moshi-kotlin:1.15.2"
-    kapt "com.squareup.moshi:moshi-kotlin-codegen:1.15.2"
+    ksp "com.squareup.moshi:moshi-kotlin-codegen:1.15.2"
 
     testImplementation "com.google.truth:truth:1.4.5"
 

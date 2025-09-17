@@ -1,8 +1,16 @@
-plugins {
-    id 'com.android.library'
-    id 'kotlin-android'
-    id 'kotlin-kapt'
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:2.2.20-2.0.3"
+    }
 }
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'com.google.devtools.ksp'
 
 android {
     compileSdkVersion 34
@@ -45,9 +53,9 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-moshi:2.11.0"
     implementation "com.squareup.okhttp3:okhttp:4.12.0"
     implementation "com.squareup.okhttp3:logging-interceptor:4.12.0"
-    implementation "com.squareup.moshi:moshi-kotlin:1.15.1"
-    implementation 'com.squareup.moshi:moshi:1.15.1'
-    kapt "com.squareup.moshi:moshi-kotlin-codegen:1.15.1"
+    implementation "com.squareup.moshi:moshi-kotlin:1.15.2"
+    implementation 'com.squareup.moshi:moshi:1.15.2'
+    ksp "com.squareup.moshi:moshi-kotlin-codegen:1.15.2"
 
     testImplementation "com.google.truth:truth:1.1.3"
 }
